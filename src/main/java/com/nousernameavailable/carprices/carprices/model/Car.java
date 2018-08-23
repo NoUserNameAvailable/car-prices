@@ -73,6 +73,12 @@ public class Car {
     @Column(name = "batch")
     private String batch;
 
+    @Column(name = "country")
+    private String country;
+
+    @Column(name = "city")
+    private String city;
+
     protected Car() {
     }
 
@@ -82,14 +88,14 @@ public class Car {
         this.price = price;
     }
 
-    public Car(String brand, String model, Double price, String carIdSite){
+    public Car(String brand, String model, Double price, String carIdSite) {
         this.brand = brand;
         this.model = model;
         this.price = price;
         this.carIdSite = carIdSite;
     }
 
-    public Car(Long id, String brand, String model, Double price, String carIdSite){
+    public Car(Long id, String brand, String model, Double price, String carIdSite) {
         this.id = id;
         this.brand = brand;
         this.model = model;

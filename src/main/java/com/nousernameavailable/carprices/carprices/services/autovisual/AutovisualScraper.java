@@ -55,7 +55,7 @@ public class AutovisualScraper extends Scraper {
         } catch (IOException e) {
             log.error("Impossible to create directory " + e.getMessage());
         }
-        file = new File(getSite() +"/"+getBatchName()+"_"+super.getLocalDateTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH-mm-ss"))+".json");
+        file = new File(getSite() +"/"+getBatchName()+"_"+super.getLocalDateTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'hh-mm-ss"))+".json");
         try {
             FileUtils.copyURLToFile(new URL(getUrl()), file);
         } catch (IOException e) {
@@ -86,6 +86,8 @@ public class AutovisualScraper extends Scraper {
         car.setFuelType(findFuelType(jsonCar));
         car.setEntryIntoService(findEntryIntoService(jsonCar));
         car.setPrice(findPrice(jsonCar));
+        car.setCountry(jsonCar.optString("id_pays"));
+        car.setCity(jsonCar.optString("ville"));
         car.setBrand(super.getBrand());
         car.setModel(super.getModel());
         car.setUrl(jsonCar.optString("url"));

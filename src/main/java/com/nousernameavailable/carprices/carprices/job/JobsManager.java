@@ -34,8 +34,8 @@ public class JobsManager {
     @Scheduled(fixedRate = 5000000)
     public void runAutovisual(){
         String site = "AutoVisual";
-//        String url = "https://www.autovisual.com/fr/json-more-modele/Volkswagen/Scirocco/Scirocco--Coup%C3%A9/fr--75000--Paris/1500";
-        String url = "file:////home/mat/IdeaProjects/car-prices/autovisual.json";
+        String url = "https://www.autovisual.com/fr/json-more-modele/Volkswagen/Scirocco/Scirocco--Coupé/fr--75000--Paris/9382";
+//        String url = "file:////home/mat/IdeaProjects/car-prices/autovisual.json";
         String baseUrl = "https://www.autovisual.com";
         String model = "SCIROCCO";
         String brand = "VOLKSWAGEN";

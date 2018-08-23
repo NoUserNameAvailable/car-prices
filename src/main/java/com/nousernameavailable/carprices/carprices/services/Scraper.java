@@ -100,7 +100,10 @@ public abstract class Scraper {
     }
 
     private void deleteCars(List<Car> cars){
-        carRepository.deleteAll(cars);
+        cars.forEach(car -> {
+            car.setDeleted(localDateTime);
+            carRepository.save(car);
+        });
     }
 
     public void runJob(){
